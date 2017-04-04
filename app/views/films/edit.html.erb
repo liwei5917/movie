@@ -2,24 +2,5 @@
   <h2>编辑电影</h2>
 
   <hr>
-  <%= form_for @film do |f| %>
-
-  <% if @film.errors.any? %>
-  <ul>
-    <% @group.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-  <% end %>
-
-  标题
-  <%= f.text_field :title %>
-  <br>
-  叙述
-  <br>
-  <%= f.text_area :description %>
-  <br>
-
-  <%= f.submit "提交", :diable_with => 'Submitting...' %>
-  <% end %>
+  <%= render "form" %>
 </div>
