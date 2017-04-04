@@ -7,6 +7,10 @@ class FilmsController < ApplicationController
     @film = Film.new
   end
 
+  def show
+    @film = Film.find(params[:id])
+  end
+
   def create
     @film = Film.new(film_params)
     @film.save
