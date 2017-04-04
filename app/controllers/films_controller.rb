@@ -22,6 +22,13 @@ class FilmsController < ApplicationController
     redirect_to films_path
   end
 
+  def update
+    @film = Film.find(params[:id])
+    @film.update(film_params)
+
+    redirect_to film_path, notice: "Update Success"
+  end
+
   private
 
   def film_params
