@@ -11,6 +11,10 @@ class FilmsController < ApplicationController
     @film = Film.find(params[:id])
   end
 
+  def edit
+    @film = Film.find(params[:id])
+  end
+
   def create
     @film = Film.new(film_params)
     @film.save
