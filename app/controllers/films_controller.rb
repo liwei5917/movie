@@ -26,7 +26,14 @@ class FilmsController < ApplicationController
     @film = Film.find(params[:id])
     @film.update(film_params)
 
-    redirect_to film_path, notice: "Update Success"
+    redirect_to film_path, notice: "更新成功！"
+  end
+
+  def destroy
+    @film = Film.find(params[:id])
+    @film.destroy
+
+    redirect_to films_path, alert: "电影已删除！" 
   end
 
   private
