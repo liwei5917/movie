@@ -19,8 +19,10 @@
           <td><%= film.description %></td>
           <td><%= film.user.email %></td>
           <td>
+            <% if current_user && current_user == film.user %>
             <%= link_to("Edit", edit_film_path(film), class: "btn btn-default") %>
             <%= link_to("Delete", film_path(film), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } ) %>
+            <% end %>
           </td>
         </tr>
       <% end %>
