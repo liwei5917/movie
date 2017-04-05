@@ -8,6 +8,7 @@
         <td>#</td>
         <td>名称</td>
         <td>简介</td>
+        <td>创建人</td>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
           <td>#</td>
           <td><%= link_to(film.title, film_path(film)) %></td>
           <td><%= film.description %></td>
+          <td><%= film.user.email %></td>
           <td>
             <%= link_to("Edit", edit_film_path(film), class: "btn btn-default") %>
             <%= link_to("Delete", film_path(film), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } ) %>
