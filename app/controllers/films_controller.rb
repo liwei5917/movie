@@ -32,7 +32,7 @@ class FilmsController < ApplicationController
 
   def update
     if @film.update(film_params)
-      redirect_to film_path, notice: "更新成功！"
+      redirect_to films_path, notice: "更新成功！"
     else
       render :edit
     end
