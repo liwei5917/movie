@@ -12,20 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @films.each do |film| %>
-        <tr>
-          <td>#</td>
-          <td><%= link_to(film.title, film_path(film)) %></td>
-          <td><%= render_film_description(film) %></td>
-          <td><%= film.user.email %></td>
-          <td>
-            <% if current_user && current_user == film.user %>
-            <%= link_to("Edit", edit_film_path(film), class: "btn btn-default") %>
-            <%= link_to("Delete", film_path(film), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } ) %>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
+      <%= render :partial => "film_item", :collection => @films, :as => :film %>
     </tbody>
   </table>
 </div>

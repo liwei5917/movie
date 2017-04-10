@@ -1,0 +1,12 @@
+<tr>
+  <td>#</td>
+  <td><%= link_to(film.title, film_path(film)) %></td>
+  <td><%= render_film_description(film) %></td>
+  <td><%= film.user.email %></td>
+  <td>
+    <% if current_user && current_user == film.user %>
+      <%= link_to("编辑", edit_film_path(film), class: "btn btn-sm btn-default") %>
+      <%= link_to("删除", film_path(film), class: "btn btn-sm btn-default", method: :delete, data: { confirm: "Are you sure?" }) %>
+    <% end %>
+  </td>
+</tr>
