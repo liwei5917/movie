@@ -1,0 +1,2 @@
+module Account::FilmsHelper
+end
