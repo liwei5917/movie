@@ -20,6 +20,13 @@ class ReviewsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @film = Film.find(params[:film_id])
+  #   @review = Review.find(params[:id])
+  #   @review.destroy
+  #   redirect_to account_reviews_path
+  # end
+  #
   private
 
   def review_params

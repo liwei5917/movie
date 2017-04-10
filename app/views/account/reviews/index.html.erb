@@ -1,0 +1,27 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> 我发表过的评论 </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> 内容 </th>
+        <th> 电影名称 </th>
+        <th> 更新时间 </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @reviews.each do |review| %>
+        <tr>
+          <td><%= review.content %></td>
+          <td><%= review.film.title %></td>
+          <td><%= review.updated_at %></td>
+          <td><%= link_to("编辑", edit_film_review_path(review.film, review), class: "btn btn-default btn-xs") %></td>
+          <td><%= link_to("删除", film_review_path(review.film, review), method: :delete, class: "btn btn-default btn-xs") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
